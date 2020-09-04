@@ -34,11 +34,18 @@
 
             float map(float3 p, float3 _Position, float time)
             {
-            p = p - _Position.xyz;
-			
-			float s = sphere(p,_SphereSize);
-            float disp = opDisplace(p,time);
-			return s+disp*0.03+max(0.8,disp)*0.1;
+                p = p - _Position.xyz;
+
+                float s = sphere(p, _SphereSize);
+                float disp = opDisplace(p, time);
+                return s + disp * 0.03 + max(0.8, disp) * 0.1;
+            }
+
+            float mapTesseract(float3 p, float3 _position)
+            {
+                p = p - _position.xyz;
+                float s = sphere(p, _SphereSize);
+                return s;
             }
 
             void RaymarchHit_float(float3 origin, float3 ray, float3 _Position,float time, out float t)
@@ -53,6 +60,22 @@
                     t += d*0.5;
                 }
                 
+            }
+
+            void RaymarchTesseract_float(float3 origin, float3 ray, float3 _Position, out float t)
+            {
+                t = 0.0;
+                for (int i = 0; i < 64; i++)
+                {
+                    float3 p = origin + ray * t;
+                    float d = mapTesseract(p, _Position);
+                    if (d < 0.01)
+                    {
+                        break;
+                    }
+                    t += 0.01f;
+                }
+
             }
 
 		/*	void EstimateNormal_float(float3 origin, float3 _Position, out float3 normal, float time)
