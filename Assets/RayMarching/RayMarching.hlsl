@@ -1,10 +1,10 @@
 #ifndef MYHLSLINCLUDE_INCLUDED
 #define MYHLSLINCLUDE_INCLUDED
 			float EPSILON = 0.001;
-			float _SphereSize = 0.3;
+			float _SphereSize = 0.35;
             float sphere(float3 p, float r) //radius
             {
-                return length(p) - 0.2;  
+                return length(p) - 0.25;
             }
 
 
@@ -22,7 +22,7 @@
 			
 			float displacement(float3 p, float time)
 			{
-			return sin(20*p.x+time)*sin(20*p.y+time)*sin(20*p.z+time); 
+			return sin(20*p.x+time)+sin(20*p.y+time)*sin(20*p.z+time); 
 			}
 			
 			float opDisplace(  float3 p, float time )
@@ -41,11 +41,12 @@
                 return s + disp * 0.03 + max(0.8, disp) * 0.1;
             }
 
-            float mapTesseract(float3 p, float3 _position)
+            float mapTesseract(float3 p, float3 _position, float time)
             {
                 p = p - _position.xyz;
                 float s = sphere(p, _SphereSize);
-                return s;
+                float disp = opDisplace(p, time);
+                return s + disp * 0.1 + max(0.8, disp) * 0.1;;
             }
 
             void RaymarchHit_float(float3 origin, float3 ray, float3 _Position,float time, out float t)
@@ -62,13 +63,13 @@
                 
             }
 
-            void RaymarchTesseract_float(float3 origin, float3 ray, float3 _Position, out float t)
+            void RaymarchTesseract_float(float3 origin, float3 ray, float3 _Position,float time, out float t)
             {
                 t = 0.0;
                 for (int i = 0; i < 64; i++)
                 {
                     float3 p = origin + ray * t;
-                    float d = mapTesseract(p, _Position);
+                    float d = mapTesseract(p, _Position, time);
                     if (d < 0.01)
                     {
                         break;
