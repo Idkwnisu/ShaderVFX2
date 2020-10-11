@@ -5,7 +5,10 @@ using UnityEngine;
 public class SpawnSphere : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject sphereOnHand;
     public Transform hand;
+    public ParticleSystem chargingParticles;
+
 
     public float ForceForward = 1000.0f;
     public float ForceUp = 400.0f;
@@ -27,5 +30,17 @@ public class SpawnSphere : MonoBehaviour
         Rigidbody rb = sphere.GetComponent<Rigidbody>();
 
         rb.AddForce(transform.forward * ForceForward + transform.up * ForceUp);
+    }
+
+    public void StartParticle()
+    {
+        chargingParticles.Play();
+        sphereOnHand.SetActive(true);
+    }
+
+    public void StopParticle()
+    {
+        chargingParticles.Stop();
+        sphereOnHand.SetActive(false);
     }
 }
