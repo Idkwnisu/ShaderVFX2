@@ -7,6 +7,8 @@ public class FloorColliding : MonoBehaviour
     private Rigidbody rb;
     public float gravity;
     public Vector3 direction;
+
+    public GameObject iceGameObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,8 @@ public class FloorColliding : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Floor"))
         {
+            GameObject ice = Instantiate(iceGameObject, this.transform);
+            ice.transform.parent = transform.parent;
             Destroy(this.gameObject); //maybe later with a delay/spawning something else
         }
     }
