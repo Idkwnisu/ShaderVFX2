@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Character
-  m_Shader: {fileID: -6465566751694194690, guid: 5863cdbf6f332524f87bce15988d5b30,
+  m_Name: Trailer
+  m_Shader: {fileID: -6465566751694194690, guid: 555280d640d4d494ba8c42460b8fff8e,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -20,14 +20,6 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats:
-    - Vector1_1FCAEB4E: 0.1
-    - Vector1_57292890: 2
-    - Vector1_6E6F0418: 3
-    - Vector1_74FA8914: 0.15
-    - Vector1_9658778C: 14.16
+    m_Floats: []
     m_Colors:
-    - Color_79EE0E85: {r: 0, g: 20.956863, b: 23.968628, a: 0}
-    - Color_B52B77C6: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_7249E5FE: {r: -3, g: 1, b: 0, a: 0}
-    - Vector2_9044F3D3: {r: 2, g: -1, b: 0, a: 0}
+    - Color_B83F4D40: {r: 2.0857956, g: 5.8307986, b: 7.018868, a: 1}
