@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SmokeMaterial
+  m_Name: SmokeMaterial 1
   m_Shader: {fileID: -6465566751694194690, guid: 43384af762474da4db1e19a1ae937fc0,
     type: 3}
   m_ShaderKeywords: 

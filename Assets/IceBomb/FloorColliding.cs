@@ -25,7 +25,7 @@ public class FloorColliding : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Floor"))
         {
-            GameObject ice = Instantiate(iceGameObject, this.transform);
+            GameObject ice = Instantiate(iceGameObject, this.transform.position, Quaternion.identity);
             ice.transform.parent = transform.parent;
             Destroy(this.gameObject); //maybe later with a delay/spawning something else
         }

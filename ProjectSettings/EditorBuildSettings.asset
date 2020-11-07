@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/VFXTest.unity
     guid: d7d02146f8e114a48998e9d644979a22
-  - enabled: 1
+  - enabled: 0
     path: Assets/Tesseract/TesseractScene.unity
     guid: 6c0547c8a51e44147820b4294b1b03c2
+  - enabled: 1
+    path: Assets/IceBomb/BombScene.unity
+    guid: f6b6d15a087f6cc419a8d2919399ae6f
   m_configObjects: {}
