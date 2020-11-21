@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CircleMat
+  m_Shader: {fileID: -6465566751694194690, guid: a44c46d71f0aea842aacfa02f6d740b2,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_69C8C949:
+        m_Texture: {fileID: 2800000, guid: 36d15a1c0303123489a471bc38ab0c43, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_59A55523: 87
+    - Vector1_AA388821: -0.5
+    - _Step: -0.48
+    m_Colors:
+    - Color_C8E45A76: {r: 2.0852718, g: 4.237095, b: 1.7525157, a: 0}
