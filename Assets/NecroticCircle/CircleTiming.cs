@@ -15,6 +15,7 @@ public class CircleTiming : MonoBehaviour
 
     public float step = 0.5f;
     public ParticleSystem psystem;
+    public ParticleSystem psystem2;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class CircleTiming : MonoBehaviour
             {
                 animatingProperty = false;
                 psystem.Play();
+                psystem2.Stop();    
             }
         }
     }
