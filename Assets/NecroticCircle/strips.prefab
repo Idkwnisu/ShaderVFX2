@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6710822968832780247}
   - component: {fileID: 8846572316920877853}
   - component: {fileID: 7855618085965954934}
+  - component: {fileID: 3356734347907208627}
   m_Layer: 0
   m_Name: strips
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7045225030798553800}
   m_LocalRotation: {x: -0.2322331, y: -0.2322331, z: 0.6678831, w: 0.6678831}
   m_LocalPosition: {x: -3.29, y: 3.37, z: -1.21}
-  m_LocalScale: {x: 88.48102, y: 95.43095, z: 95.43095}
+  m_LocalScale: {x: 131.73938, y: 68.66161, z: 95.43095}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -93,7 +94,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NameProperty: _Offset
-  animatingProperty: 1
+  animatingProperty: 0
   startPoint: {x: 0, y: 1}
   time: 2
   step: {x: 0, y: -1}
+  delayRand: {x: 5, y: 7}
+--- !u!114 &3356734347907208627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7045225030798553800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7c5c170ca939f4298f336ec35a767f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameProperty: _Alpha
+  animatingProperty: 0
+  startPoint: 1
+  time: 1
+  step: -1
+  delayRand: {x: 5, y: 5}
