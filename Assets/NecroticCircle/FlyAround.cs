@@ -8,7 +8,7 @@ public class FlyAround : MonoBehaviour
     public Vector2 desiredHeigthR;
     public Vector2 delayR;
 
-    public Vector2 positionRange;
+    public float positionBias = 2.0f;
 
     private float speed;
     private float desiredHeigth;
@@ -16,13 +16,22 @@ public class FlyAround : MonoBehaviour
     private Vector3 direction;
     bool started = true;
     bool delayOver = false;
+
+    private Vector3 laterDirection;
     // Start is called before the first frame update
     void Start()
     {
-        transform.position += new Vector3(Random.Range(positionRange.x, positionRange.y), 0, Random.Range(positionRange.x, positionRange.y));
+        
         direction = Vector3.up;
         speed = Random.Range(speedR.x, speedR.y);
         desiredHeigth = Random.Range(desiredHeigthR.x, desiredHeigthR.y);
+
+        laterDirection = new Vector3(Random.Range(-2, 2), 1.0f, Random.Range(-2, 2));
+
+        transform.position += (laterDirection - Vector3.up) * positionBias;
+
+        transform.LookAt(transform.position + laterDirection - Vector3.up);
+
         Invoke("EndDelay", Random.Range(delayR.x, delayR.y));
     }
 
@@ -34,8 +43,8 @@ public class FlyAround : MonoBehaviour
             transform.position += direction * speed * Time.deltaTime;
             if (transform.position.y >= desiredHeigth && started)
             {
-                direction = new Vector3(Random.Range(-2, 2), 1.0f, Random.Range(-2, 2));
-                transform.LookAt(transform.position + direction - Vector3.up);
+                direction = laterDirection;
+                
                 started = false;
             }
         }
